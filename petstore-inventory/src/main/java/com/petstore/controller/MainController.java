@@ -75,7 +75,7 @@ public class MainController {
         return info;
     }
 
-    @RequestMapping(path = "/owner", method = RequestMethod.GET)
+    @RequestMapping(path = "/info/owner", method = RequestMethod.GET)
     public String getOwner() {
         return owner;
     }
@@ -84,7 +84,7 @@ public class MainController {
         this.owner = owner;
     }
 
-    @RequestMapping(path = "/address", method = RequestMethod.GET)
+    @RequestMapping(path = "/info/address", method = RequestMethod.GET)
     public String getAddress() {
         return address;
     }
@@ -93,7 +93,7 @@ public class MainController {
         this.address = address;
     }
 
-    @RequestMapping(path = "/phone", method = RequestMethod.GET)
+    @RequestMapping(path = "/info/phone", method = RequestMethod.GET)
     public String getPhone() {
         return phone;
     }
