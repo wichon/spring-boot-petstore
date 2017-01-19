@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "petstore-inventory"
+  profiles:
+    active: north
+#    active: north
+  cloud:
+    config:
+      uri:http://localhost:8888
+server:
+  port: 8000
