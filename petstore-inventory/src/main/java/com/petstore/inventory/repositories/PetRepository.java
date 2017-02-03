@@ -1,7 +1,7 @@
-package com.petstore.repository;
+package com.petstore.inventory.repositories;
 
 import java.util.List;
-import com.petstore.model.Pet;
+import com.petstore.inventory.models.Pet;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.CrudRepository;
 
@@ -11,6 +11,8 @@ import org.springframework.data.repository.CrudRepository;
 public interface PetRepository extends CrudRepository<Pet, Long> {
     @Cacheable("pets-by-type")
     List<Pet> findByType(String type);
+
+    List<Pet> findByStatus(String status);
 
     @Cacheable("pets-all")
     List<Pet> findAll();

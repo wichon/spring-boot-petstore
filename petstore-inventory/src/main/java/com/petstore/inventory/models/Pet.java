@@ -1,9 +1,6 @@
-package com.petstore.model;
+package com.petstore.inventory.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by wichon on 1/18/17.
@@ -17,6 +14,7 @@ public class Pet {
     private String type;
     private String color;
     private String name;
+    private String status;
 
     public Long getId() {
         return id;
@@ -50,16 +48,25 @@ public class Pet {
         this.name = name;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     protected Pet() {}
 
-    public Pet(String type, String color, String name) {
+    public Pet(String type, String color, String name, String status) {
         this.type = type;
         this.color = color;
         this.name = name;
+        this.status = status;
     }
 
     @Override
     public String toString() {
-        return String.format("Pet[Id=%s, Name=%s, Type=%s, Color=%s]", id, name, type, color);
+        return String.format("Pet[Id=%s, Name=%s, Type=%s, Color=%s, Status=%s]", id, name, type, color, status);
     }
 }
