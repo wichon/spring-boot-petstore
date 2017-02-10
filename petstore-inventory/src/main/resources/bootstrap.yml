@@ -3,7 +3,7 @@ spring:
     name: "petstore-inventory"
   profiles:
     active: north
-#    active: north
+#    active: south
   cloud:
     config:
       uri:http://localhost:8888

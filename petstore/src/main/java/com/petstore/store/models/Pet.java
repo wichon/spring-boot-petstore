@@ -1,22 +1,15 @@
-package com.petstore.inventory.models;
-
-import javax.persistence.*;
+package com.petstore.store.models;
 
 /**
- * Created by wichon on 1/18/17.
+ * Created by wichon on 2/4/17.
  */
-
-@Entity
 public class Pet {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String type;
     private String color;
     private String name;
-    // TODO: It will better to change this field to use an Enum
-    // Possible values: available , sold, adoption, adopted
     private String status;
+    private double price;
 
     public Long getId() {
         return id;
@@ -58,14 +51,25 @@ public class Pet {
         this.status = status;
     }
 
-    protected Pet() {}
+    public double getPrice() {
+        return price;
+    }
 
-    public Pet(String type, String color, String name, String status) {
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Pet() {}
+
+    public Pet(Long id, String type, String color, String name, String status, double price) {
+        this.id = id;
         this.type = type;
         this.color = color;
         this.name = name;
         this.status = status;
+        this.price = price;
     }
+
 
     @Override
     public String toString() {
